@@ -1,0 +1,38 @@
+version: '2'
+services:
+  my_postgres:
+    image: postgres:9.4
+    environment:
+      - POSTGRES_USER=pguser
+      - POSTGRES_PASSWORD=pguser123
+      - POSTGRES_DB=test-db-1
+
+  my_redis:
+    image: redis:alpine
+
+  my_sanic:
+    build: .
+    depends_on:
+      - my_postgres
+      - my_redis
+    ports:
+      - "6623:6623"
+    environment:
+      - SANIC_HOST=0.0.0.0
+      - SANIC_PORT=6623
+      - SANIC_DEBUG=false
+      - SANIC_WORKER=1
+
+      - POSTGRES_HOST=my_postgres
+      - POSTGRES_PORT=5432
+      - POSTGRES_DB=test-db-1
+      - POSTGRES_USER=pguser
+      - POSTGRES_PASSWORD=pguser123
+
+      - REDIS_HOST=my_redis
+      - REDIS_PORT=6379
+      - REDIS_DB=1
+
+      - REDIS_CACHE_HOST=my_redis
+      - REDIS_CACHE_PORT=6379
+      - REDIS_CACHE_DB=2

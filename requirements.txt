@@ -1,0 +1,16 @@
+aiofiles==0.3.2
+aiohttp==2.3.6
+aioredis==1.0.0
+async-timeout==2.0.0
+asyncio-redis==0.14.3
+asyncpg==0.13.0
+chardet==3.0.4
+hiredis==0.2.0
+httptools==0.0.9
+multidict==3.3.2
+sanic==0.7.0
+sanic-session==0.1.5
+ujson==1.35
+uvloop==0.9.1
+websockets==4.0.1
+yarl==0.15.0

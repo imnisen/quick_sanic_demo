@@ -1,0 +1,31 @@
+[sanic_config]
+host = SANIC_HOST
+port = SANIC_PORT
+debug = SANIC_DEBUG
+workers = SANIC_WORKER
+
+
+[pg_config]
+host = POSTGRES_HOST
+port = POSTGRES_PORT
+db = POSTGRES_DB
+user = POSTGRES_USER
+password = POSTGRES_PASSWORD
+min_size = 10
+max_size = 20
+
+
+[redis_config]
+host = REDIS_HOST
+port = REDIS_PORT
+db = REDIS_DB
+user =
+password =
+
+
+[redis_cache_config]
+host = REDIS_CACHE_HOST
+port = REDIS_CACHE_PORT
+db = REDIS_CACHE_DB
+user =
+password =
